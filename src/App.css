@@ -1,50 +1,281 @@
-#root {
-  min-height: 100vh;
-}
+* { box-sizing: border-box; }
+
+#root { min-height: 100vh; }
+html { scroll-behavior: smooth; }
 
 .app {
   position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  background: #080b12;
-  color: #f5f7fa;
+  background: #07090f;
+  color: #eef1f6;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 .neural-background {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
   z-index: 0;
+  display: block;
 }
 
+/* ---- Nav ------------------------------------------------------------- */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 30px;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(#07090fcc, #07090f00);
+}
+.nav .mark {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.langs { display: flex; gap: 4px; }
+.langs button {
+  background: none;
+  border: 1px solid #263149;
+  color: #8b95ad;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  padding: 3px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.langs button:hover { color: #fff; }
+.langs button.active { color: #fff; border-color: #ff9dbf; }
+.nav .links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
+.nav a {
+  color: #aeb7c8;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.nav a:hover { color: #fff; }
+@media (max-width: 680px) {
+  .nav { padding: 12px 16px; }
+  .nav .mark { font-size: 0.95rem; }
+  .nav .links { gap: 12px; }
+  .nav a { font-size: 0.66rem; letter-spacing: 0.04em; }
+}
+
+/* ---- Hero ------------------------------------------------------------ */
 .hero {
   position: relative;
   z-index: 1;
-
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
   padding: 40px;
 }
-
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 62% 46% at 50% 48%,
+    rgba(7, 9, 15, 0.88), rgba(7, 9, 15, 0) 72%);
+}
+.hero > * { position: relative; z-index: 2; }
 .hero h1 {
   margin: 0;
-
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-family: "Playfair Display", serif;
   font-weight: 700;
-  letter-spacing: -0.05em;
+  font-size: clamp(3rem, 8.5vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.hero .tagline {
+  margin-top: 22px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.75rem, 1.6vw, 1.05rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9aa4bc;
+}
+.hero .op { color: #ff9dbf; animation: synapse 3.4s ease-in-out infinite; }
+.hero .op:nth-of-type(2) { animation-delay: 1.2s; }
+@keyframes synapse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; text-shadow: 0 0 9px rgba(255, 122, 176, 0.7); }
+}
+.scroll-cue {
+  position: absolute;
+  bottom: 34px;
+  z-index: 2;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #5b6a86;
 }
 
-.hero p {
-  margin-top: 24px;
-
-  font-size: clamp(1rem, 2vw, 1.4rem);
-
+/* ---- Sections -------------------------------------------------------- */
+.section {
+  position: relative;
+  z-index: 5;
+  background: #07090f;
+  padding: 110px 30px;
+  scroll-margin-top: 72px;
+}
+.section .inner { max-width: 1000px; margin: 0 auto; }
+.eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ff9dbf;
+}
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin: 0.4em 0 0.3em;
+}
+.section .lede {
+  max-width: 660px;
   color: #aeb7c8;
+  line-height: 1.65;
+  font-size: 1.02rem;
+}
+.section .lede a { color: #ff9dbf; text-decoration: none; border-bottom: 1px solid #ff9dbf55; }
+.section .lede a:hover { border-bottom-color: #ff9dbf; }
+
+/* ---- Per-project blocks ---------------------------------------------- */
+.project { margin-top: 58px; }
+.project h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  margin: 0 0 0.5em;
+  color: #eef1f6;
+}
+.project .lede { margin-top: 0; }
+
+/* ---- Research figure plates ------------------------------------------ */
+.plates { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 32px; }
+@media (max-width: 720px) { .plates { grid-template-columns: 1fr; } }
+figure.plate { margin: 0; }
+.plate .frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #1c2333;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000;
+}
+.plate .frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.plate .tag {
+  position: absolute;
+  top: 10px; left: 10px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: #cfd6e6;
+  background: #0009;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+figure.plate figcaption {
+  margin-top: 12px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: #8b95ad;
+}
+
+/* ---- Photography page + watermark ------------------------------------ */
+.photo-page .back {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #aeb7c8;
+  text-decoration: none;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+.photo-page .back:hover { color: #fff; }
+
+.gallery {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .gallery { grid-template-columns: 1fr; } }
+
+.shot {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;      /* change to 1 / 1 for squares, or remove for full height */
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid #141a28;
+}
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  transition: transform 0.45s ease;
+}
+.shot:hover img { transform: scale(1.04); }
+
+/* watermark: hidden by default, shown when the gallery is "armed".
+   To make it ALWAYS visible instead, change opacity below to 1. */
+.wm {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--wm);
+  background-repeat: repeat;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+.gallery.armed .wm { opacity: 1; }
+
+/* ---- Contact --------------------------------------------------------- */
+.about .lede { max-width: 700px; }
+.contact-links { margin-top: 30px; display: flex; gap: 18px; flex-wrap: wrap; }
+.contact-links a {
+  color: #eef1f6;
+  text-decoration: none;
+  border: 1px solid #263149;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  transition: 0.15s;
+}
+.contact-links a:hover { background: #111826; border-color: #3a4a6b; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero .op { animation: none; opacity: 1; }
 }
