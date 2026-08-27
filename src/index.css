@@ -1,0 +1,31 @@
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #080b12;
+  color: #f5f7fa;
+  text-align: center;
+}
+
+.hero {
+  max-width: 900px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.hero p {
+  margin-top: 24px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #aeb7c8;
+}
