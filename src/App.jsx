@@ -223,7 +223,7 @@ export default function App() {
               <h2>{t.contact.h2}</h2>
               <div className="contact-links">
                 <a href="https://github.com/gabrielamclemente">GitHub</a>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">{t.contact.resume}</a>
+                <a href={t.contact.resumeFile} target="_blank" rel="noopener noreferrer">{t.contact.resume}</a>
                 <a href="mailto:you@example.com">{t.contact.email}</a>
               </div>
             </div>

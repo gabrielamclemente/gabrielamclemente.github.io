@@ -37,7 +37,7 @@ export const translations = {
       h2: "Between the wet lab and the terminal",
       lede: "I'm a software developer with a neuroscience research background, with a double major in Computer Science and Neuroscience, an honors thesis in glial signaling, and a habit of reaching for code whenever the data gets bigger than a spreadsheet. Research, engineering, and a camera: the three strands in the tagline are the three things I actually do.",
     },
-    contact: { eyebrow: "Contact", h2: "Let's talk", resume: "Resume (PDF)", email: "Email" },
+    contact: { eyebrow: "Contact", h2: "Let's talk", resume: "Resume (PDF)", resumeFile: "/resume-en.pdf", email: "Email" },
     photo: {
       eyebrow: "Photography · Creativity",
       title: "Through the lens",
@@ -82,7 +82,7 @@ export const translations = {
       h2: "Entre o laboratório e o terminal",
       lede: "Sou desenvolvedora de software com formação em pesquisa em neurociência, com dupla graduação em Ciência da Computação e Neurociência, uma tese de honras em sinalização glial e o hábito de recorrer ao código sempre que os dados ficam maiores que uma planilha. Pesquisa, engenharia e uma câmera: os três fios do subtítulo são as três coisas que eu de fato faço.",
     },
-    contact: { eyebrow: "Contato", h2: "Vamos conversar", resume: "Currículo (PDF)", email: "E-mail" },
+    contact: { eyebrow: "Contato", h2: "Vamos conversar", resume: "Currículo (PDF)", resumeFile: "/resume-pt.pdf", email: "E-mail" },
     photo: {
       eyebrow: "Fotografia · Criatividade",
       title: "Através das lentes",
@@ -127,7 +127,7 @@ export const translations = {
       h2: "Entre el laboratorio y la terminal",
       lede: "Soy desarrolladora de software con formación en investigación en neurociencia, con doble titulación en Ciencia de la Computación y Neurociencia, una tesis de honores en señalización glial y la costumbre de recurrir al código cuando los datos superan una hoja de cálculo. Investigación, ingeniería y una cámara: los tres hilos del subtítulo son las tres cosas que de verdad hago.",
     },
-    contact: { eyebrow: "Contacto", h2: "Hablemos", resume: "CV (PDF)", email: "Correo" },
+    contact: { eyebrow: "Contacto", h2: "Hablemos", resume: "CV (PDF)", resumeFile: "/resume-es.pdf", email: "Correo" },
     photo: {
       eyebrow: "Fotografía · Creatividad",
       title: "A través del objetivo",
