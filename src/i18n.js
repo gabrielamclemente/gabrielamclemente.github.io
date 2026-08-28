@@ -19,6 +19,7 @@ export const translations = {
       p2: {
         h3: "Glia, mitochondria, and traumatic brain injury",
         body: "My undergraduate honors thesis (Crocker Lab, Middlebury) traced how glial cells clear damage and how mitochondria cope in the hours after traumatic brain injury, in Drosophila. I examined Draper and JAK–STAT glial signaling alongside mitochondrial quality control, combining Western blotting with confocal imaging, and wrote a Python pipeline that turned 19,000+ images into reproducible measurements. Archived in Middlebury's thesis repository.",
+        fig: "The Draper–Stat92E autoregulatory axis, redrawn from my thesis Figure 1: injury drives glial reactivity, which clears damage and protects mitochondria while feeding back through Stat92E to sustain the response.",
       },
     },
     eng: {
@@ -29,6 +30,7 @@ export const translations = {
       e2: { h3: "Scientific computing", body: "Python pipelines for large-scale image analysis, the 19,000-image thesis pipeline is the clearest example, plus a foundation in algorithms and theory of computation." },
       e3: { h3: "This page is the demo", body: "The network behind the header is a spiking neural-network simulation I wrote from scratch: integrate-and-fire neurons that fire across their synapses and drop into a refractory period, the same dynamics I studied in the wet lab, live on canvas." },
       source: "Source on GitHub →",
+      pipeline: "My thesis analysis pipeline, visualized: pick a brain region, scan the confocal z-stack slice by slice, segment the signal, and measure it, the workflow I automated across 19,000+ images.",
     },
     about: {
       eyebrow: "About",
@@ -62,6 +64,7 @@ export const translations = {
       p2: {
         h3: "Glia, mitocôndrias e lesão cerebral",
         body: "Minha tese de honras (Crocker Lab, Middlebury) acompanhou como as células gliais lidam com danos e como as mitocôndrias respondem nas horas seguintes a uma lesão cerebral traumática, em Drosophila. Estudei a sinalização glial via Draper e JAK–STAT junto ao controle de qualidade mitocondrial, combinando Western blot e imagem confocal, e escrevi um pipeline em Python que transformou mais de 19.000 imagens em medidas reprodutíveis. Arquivada no repositório de teses de Middlebury.",
+        fig: "O eixo autorregulatório Draper–Stat92E, redesenhado da Figura 1 da minha tese: a lesão ativa a reatividade glial, que remove danos e protege as mitocôndrias enquanto retroalimenta via Stat92E para sustentar a resposta.",
       },
     },
     eng: {
@@ -72,6 +75,7 @@ export const translations = {
       e2: { h3: "Computação científica", body: "Pipelines em Python para análise de imagens em larga escala, o pipeline de 19.000 imagens da tese é o exemplo mais claro, além de uma base em algoritmos e teoria da computação." },
       e3: { h3: "Esta página é a demonstração", body: "A rede atrás do cabeçalho é uma simulação de rede neural de disparo que escrevi do zero: neurônios integra-e-dispara que disparam pelas sinapses e entram em período refratário, a mesma dinâmica que estudei no laboratório, ao vivo no canvas." },
       source: "Código no GitHub →",
+      pipeline: "Meu pipeline de análise da tese, visualizado: escolher uma região do cérebro, percorrer o z-stack confocal fatia por fatia, segmentar o sinal e medi-lo, o fluxo que automatizei em mais de 19.000 imagens.",
     },
     about: {
       eyebrow: "Sobre",
@@ -105,6 +109,7 @@ export const translations = {
       p2: {
         h3: "Glía, mitocondrias y lesión cerebral",
         body: "Mi tesis de honores (Crocker Lab, Middlebury) siguió cómo las células gliales manejan el daño y cómo responden las mitocondrias en las horas posteriores a una lesión cerebral traumática, en Drosophila. Estudié la señalización glial vía Draper y JAK–STAT junto al control de calidad mitocondrial, combinando Western blot e imagen confocal, y escribí un pipeline en Python que convirtió más de 19.000 imágenes en mediciones reproducibles. Archivada en el repositorio de tesis de Middlebury.",
+        fig: "El eje autorregulador Draper–Stat92E, redibujado de la Figura 1 de mi tesis: la lesión activa la reactividad glial, que elimina el daño y protege las mitocondrias mientras retroalimenta vía Stat92E para sostener la respuesta.",
       },
     },
     eng: {
@@ -115,6 +120,7 @@ export const translations = {
       e2: { h3: "Computación científica", body: "Pipelines en Python para análisis de imágenes a gran escala, el pipeline de 19.000 imágenes de la tesis es el ejemplo más claro, además de una base en algoritmos y teoría de la computación." },
       e3: { h3: "Esta página es la demostración", body: "La red detrás del encabezado es una simulación de red neuronal de disparo que escribí desde cero: neuronas integra-y-dispara que disparan por sus sinapsis y entran en período refractario, la misma dinámica que estudié en el laboratorio, en vivo sobre canvas." },
       source: "Código en GitHub →",
+      pipeline: "Mi pipeline de análisis de la tesis, visualizado: elegir una región del cerebro, recorrer el z-stack confocal capa por capa, segmentar la señal y medirla, el flujo que automaticé en más de 19.000 imágenes.",
     },
     about: {
       eyebrow: "Sobre mí",

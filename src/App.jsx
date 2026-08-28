@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import NeuralBackground from "./components/NeuralBackground/NeuralBackground";
+import AlgoBand from "./components/AlgoBand/AlgoBand";
+import BrainPipeline from "./components/BrainPipeline/BrainPipeline";
+import PathwaySignal from "./components/PathwaySignal/PathwaySignal";
 import { translations } from "./i18n";
 
 const REPO = "https://github.com/gabrielamclemente/gabrielamclemente.github.io";
@@ -175,9 +178,15 @@ export default function App() {
               <div className="project">
                 <h3>{t.research.p2.h3}</h3>
                 <p className="lede">{t.research.p2.body}</p>
+                <figure className="pathway">
+                  <PathwaySignal />
+                  <figcaption>{t.research.p2.fig}</figcaption>
+                </figure>
               </div>
             </div>
           </section>
+
+          <AlgoBand />
 
           <section id="engineering" className="section">
             <div className="inner">
@@ -186,6 +195,10 @@ export default function App() {
               <p className="lede">{t.eng.lede}</p>
               <div className="project"><h3>{t.eng.e1.h3}</h3><p className="lede">{t.eng.e1.body}</p></div>
               <div className="project"><h3>{t.eng.e2.h3}</h3><p className="lede">{t.eng.e2.body}</p></div>
+              <figure className="pipeline">
+                <BrainPipeline />
+                <figcaption>{t.eng.pipeline}</figcaption>
+              </figure>
               <div className="project">
                 <h3>{t.eng.e3.h3}</h3>
                 <p className="lede">
