@@ -57,8 +57,11 @@ export default function BrainPipeline() {
       const mass = new Path2D();
       const E = (ux, uy, urx, ury, rot) => mass.ellipse(cx + ux * S, cy + uy * S, urx * S, ury * S, rot || 0, 0, Math.PI * 2);
       // lateral optic lobes
-      E(-0.74, 0.0, 0.26, 0.46, 0.15);
-      E(0.74, 0.0, 0.26, 0.46, -0.15);
+      E(-0.70, 0.0, 0.25, 0.46, 0.15);
+      E(0.70, 0.0, 0.25, 0.46, -0.15);
+      // lateral bridges — fill the gap between central mass and optic lobes
+      E(-0.50, 0.0, 0.17, 0.30);
+      E(0.50, 0.0, 0.17, 0.30);
       // protocerebrum (bilobed) + broad central + antennal lobes + SEG
       E(-0.26, -0.30, 0.28, 0.28);
       E(0.26, -0.30, 0.28, 0.28);
@@ -83,11 +86,15 @@ export default function BrainPipeline() {
     function drawBrain() {
       const { mass, foramen, cx, cy, S, bx, by, bw, bh } = brain;
 
-      // magenta body with cyan bloom (glow only — no rim artifacts)
+      // magenta body with cyan bloom. A thick same-colour stroke drawn first
+      // bridges any hairline seams between the assembled lobes (so no gap/glow
+      // can show through); the fill then covers the interior seam lines.
       ctx.save();
       ctx.shadowColor = "rgba(150,220,255,0.9)"; ctx.shadowBlur = 15;
-      const grad = ctx.createRadialGradient(cx, cy - 0.15 * S, 0.1 * S, cx, cy, 1.1 * S);
+      const grad = ctx.createRadialGradient(cx, cy - 0.15 * S, 0.1 * S, cx, cy, 1.15 * S);
       grad.addColorStop(0, "#ff77f2"); grad.addColorStop(0.55, "#e23bce"); grad.addColorStop(1, "#7d1f78");
+      ctx.lineJoin = "round"; ctx.lineCap = "round";
+      ctx.strokeStyle = grad; ctx.lineWidth = 9; ctx.stroke(mass);
       ctx.fillStyle = grad; ctx.fill(mass);
       ctx.restore();
 
