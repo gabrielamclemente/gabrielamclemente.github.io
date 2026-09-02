@@ -102,10 +102,10 @@ html { scroll-behavior: smooth; }
   margin: 0;
   font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-size: clamp(2.2rem, 11vw, 7rem);
+  font-size: clamp(2.3rem, 11vw, 7rem);
   line-height: 1.02;
   letter-spacing: -0.01em;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   max-width: 100%;
 }
 .hero .tagline {

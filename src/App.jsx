@@ -140,7 +140,7 @@ export default function App() {
       {view === "home" ? (
         <>
           <header className="hero">
-            <h1>Gabriela&nbsp;Clemente</h1>
+            <h1>Gabriela Clemente</h1>
             <p className="tagline">
               {t.tag.a} <span className="op">&times;</span> {t.tag.b}{" "}
               <span className="op">&times;</span> {t.tag.c}
